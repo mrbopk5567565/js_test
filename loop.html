@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Nordic Coder - JS for beginners</title>
-        <style>
-            .logo{
-                width: 500px;
-                height: auto;
-                background: url('images/g4.jpg');
-            }
-        </style>
-    </head>
-    <body>
-        <div class="logo">asd</div>
-        <h2>Loop (for, while, do ... while)</h2>
+
+<head>
+    <title>Nordic Coder - JS for beginners</title>
+    <style>
+        .logo {
+            width: 500px;
+            height: auto;
+            background: url('images/g4.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">asd</div>
+    <h2>Loop (for, while, do ... while)</h2>
+    <!-- day -->
+    <select>
         <script>
-            for(var i = 1; i <= 6; i++)
-            {
-                document.write('<h' + i  + '>' + 'Heading level ' + i + '</h' + i  + '>');
-                document.write(i);
+            var i;
+            for (i = 1; i <= 31; i++) {
+                document.write('<option value="' + i + '">Ngay ' + i + '</option>');
             }
-            
         </script>
-    </body>
+    </select>
+
+    <!-- month -->
+    <select>
+        <script>
+            var i = 1;
+            while (i <= 12) 
+            {
+                document.write('<option value="' + i + '">Thang ' + i + '</option>');
+                i++;
+            }
+        </script>
+    </select>
+
+    <!-- years -->
+    <select>
+        <script>
+            var i = 2019;
+            do
+            {
+                document.write('<option value="' + i + '">Nam ' + i + '</option>');
+                i--;
+            } while (i >= 1920);
+        </script>
+    </select>
+    <br>
+    <script>
+        var s = 0;
+        for (var i = 1; i <= 100; i++) {
+            // document.write('<h' + i  + '>' + 'Heading level ' + i + '</h' + i  + '>');
+            // document.write(i);
+            // document.write('</br>');
+            // document.write(', ');
+            // s = s + i;
+            // document.write(s + '<br>');
+        }
+    </script>
+</body>
+
 </html>
