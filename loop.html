@@ -15,39 +15,65 @@
 <body>
     <div class="logo">asd</div>
     <h2>Loop (for, while, do ... while)</h2>
+
+    
+    <script>
+        // day
+        document.write('<select>');
+        var i;
+        for (i = 1; i <= 31; i++) {
+            document.write('<option value="' + i + '">Ngày ' + i + '</option>');
+        }
+        document.write('</select>');
+
+        // month
+        document.write('<select>');
+        var i;
+        for (i = 1; i <= 12; i++) {
+            document.write('<option value="' + i + '">Tháng ' + i + '</option>');
+        }
+        document.write('</select>');
+
+        // year
+        document.write('<select>');
+        var i;
+        for (i = 2019; i >= 1920; i--) {
+            document.write('<option value="' + i + '">Năm ' + i + '</option>');
+        }
+        document.write('</select>');
+    </script>
+
     <!-- day -->
-    <select>
+    <!-- <select>
         <script>
             var i;
             for (i = 1; i <= 31; i++) {
                 document.write('<option value="' + i + '">Ngay ' + i + '</option>');
             }
         </script>
-    </select>
+    </select> -->
 
     <!-- month -->
-    <select>
+    <!-- <select>
         <script>
             var i = 1;
-            while (i <= 12) 
-            {
+            while (i <= 12) {
                 document.write('<option value="' + i + '">Thang ' + i + '</option>');
                 i++;
             }
         </script>
-    </select>
+    </select> -->
 
     <!-- years -->
-    <select>
+    <!-- <select>
         <script>
             var i = 2019;
-            do
-            {
+            do {
                 document.write('<option value="' + i + '">Nam ' + i + '</option>');
                 i--;
             } while (i >= 1920);
         </script>
-    </select>
+    </select> -->
     <br>
     <script>
         var s = 0;
