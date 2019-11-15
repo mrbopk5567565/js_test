@@ -16,31 +16,34 @@
     <div class="logo">asd</div>
     <h2>Loop (for, while, do ... while)</h2>
 
-    
+
     <script>
-        // day
-        document.write('<select>');
-        var i;
-        for (i = 1; i <= 31; i++) {
-            document.write('<option value="' + i + '">Ngày ' + i + '</option>');
+        // Define a function
+        function createList(from, to, lable) {
+            document.write('<select>');
+            var i;
+            if (from < to) {
+                for (i = from; i <= to; i++) {
+                    document.write('<option value="' + i + '">' + lable + ' ' + i + '</option>');
+                }
+            } else {
+                for (i = from; i >= to; i--) {
+                    document.write('<option value="' + i + '">' + lable + ' ' + i + '</option>');
+                }
+            }
+
+            document.write('</select>');
         }
-        document.write('</select>');
+
+        // day
+        // call a function
+        createList(1, 31, 'Ngày');
 
         // month
-        document.write('<select>');
-        var i;
-        for (i = 1; i <= 12; i++) {
-            document.write('<option value="' + i + '">Tháng ' + i + '</option>');
-        }
-        document.write('</select>');
+        createList(1, 12, 'Tháng');
 
         // year
-        document.write('<select>');
-        var i;
-        for (i = 2019; i >= 1920; i--) {
-            document.write('<option value="' + i + '">Năm ' + i + '</option>');
-        }
-        document.write('</select>');
+        createList(2019, 1920, 'Năm');
     </script>
 
     <!-- day -->
