@@ -18,6 +18,9 @@
         #demo3{
             color: blue;
         }
+        #demo4{
+            color: yellow;
+        }
     </style>
 </head>
 
@@ -28,12 +31,23 @@
     <button onclick="document.getElementById('demo1').innerHTML=Date()">Click me 1</button>
     <button ondblclick="document.getElementById('demo2').innerHTML=Date()">Double Click me 2</button>
     <button onmouseover="document.getElementById('demo3').innerHTML=Date()">Mouse over</button>
-    <p id="demo1"></p>
-    <p id="demo2"></p>
-    <p id="demo3"></p>
-
+    <button onclick="onCllick()">function onclick</button>
+    <button onclick="onCllickDisplay()">function onclick display</button>
+    <p id="demo1">This is my paragraph 1</p>
+    <p id="demo2">This is my paragraph 2</p>
+    <p id="demo3">This is my paragraph 3</p>
+    <p id="demo4">This is my paragraph 4</p>
+    <p id="demo5">This is my paragraph 5</p>
 
     <script>
+        // function onclick
+        function onCllick(){
+            document.getElementById('demo4').innerHTML=Date();
+        }
+        function onCllickDisplay(){
+            document.getElementById('demo5').style.display = 'none';
+        }
+
         // Define a function
         function createList(from, to, lable) {
             document.write('<select>');
