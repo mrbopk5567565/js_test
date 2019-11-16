@@ -9,12 +9,28 @@
             height: auto;
             background: url('images/g4.jpg');
         }
+        #demo1{
+            color: red;
+        }
+        #demo2{
+            color: purple;
+        }
+        #demo3{
+            color: blue;
+        }
     </style>
 </head>
 
 <body>
     <div class="logo">asd</div>
     <h2>Loop (for, while, do ... while)</h2>
+
+    <button onclick="document.getElementById('demo1').innerHTML=Date()">Click me 1</button>
+    <button ondblclick="document.getElementById('demo2').innerHTML=Date()">Double Click me 2</button>
+    <button onmouseover="document.getElementById('demo3').innerHTML=Date()">Mouse over</button>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
 
 
     <script>
