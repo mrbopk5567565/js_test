@@ -9,17 +9,21 @@
             height: auto;
             background: url('images/g4.jpg');
         }
-        #demo1{
+
+        #demo1 {
             color: red;
         }
-        #demo2{
+
+        #demo2 {
             color: purple;
         }
-        #demo3{
+
+        #demo3 {
             color: blue;
         }
-        #demo4{
-            color: yellow;
+
+        #demo4 {
+            color: green;
         }
     </style>
 </head>
@@ -31,8 +35,9 @@
     <button onclick="document.getElementById('demo1').innerHTML=Date()">Click me 1</button>
     <button ondblclick="document.getElementById('demo2').innerHTML=Date()">Double Click me 2</button>
     <button onmouseover="document.getElementById('demo3').innerHTML=Date()">Mouse over</button>
-    <button onclick="onCllick()">function onclick</button>
-    <button onclick="onCllickDisplay()">function onclick display</button>
+    <button onclick="onClick()">function onclick</button>
+    <button onclick="onClickDisplay()">function onclick display</button>
+    <button id="click-1">Click through id</button>
     <p id="demo1">This is my paragraph 1</p>
     <p id="demo2">This is my paragraph 2</p>
     <p id="demo3">This is my paragraph 3</p>
@@ -40,12 +45,29 @@
     <p id="demo5">This is my paragraph 5</p>
 
     <script>
+        // gán sự kiện cho button #click-1
+        // document.getElementById('click-1').onclick = changeColor;
+        // document.getElementById('click-1').onclick = changeSize;
+        document.getElementById('click-1').addEventListener('click',changeColor);
+        document.getElementById('click-1').addEventListener('click',changeSize);
+
+        document.getElementById('click-1').removeEventListener('click',changeSize);
+
         // function onclick
-        function onCllick(){
-            document.getElementById('demo4').innerHTML=Date();
+        function onClick() {
+            document.getElementById('demo4').innerHTML = Date();
         }
-        function onCllickDisplay(){
+
+        function onClickDisplay() {
             document.getElementById('demo5').style.display = 'none';
+        }
+
+        function changeColor(){
+            document.getElementById('demo1').style.color = 'orange';
+        }
+
+        function changeSize(){
+            document.getElementById('demo1').style.fontSize = '50px';
         }
 
         // Define a function
