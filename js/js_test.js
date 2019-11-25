@@ -114,3 +114,45 @@ console.log(`The numbers are bigger than 10: ${arrBigger10} `);
 console.log(`The numbers are smaller than 10: ${arrSmaller10} `);
 console.log(`The position of the numbers equal 10: ${arrEqual10} `);
 
+var students = [
+    {
+        name: 'Thinh',
+        gender: 'male',
+        math: 5,
+        English: 7,
+    },
+    {
+        name: 'Tien',
+        gender: 'male',
+        math: 6,
+        English: 8,
+    },
+    {
+        name: 'Thao',
+        gender: 'female',
+        math: 4,
+        English: 9,
+    },
+    {
+        name: 'Phuong',
+        gender: 'female',
+        math: 3,
+        English: 10,
+    },
+    {
+        name: 'Thinh',
+        gender: 'male',
+        math: 2,
+        English: 6,
+    },
+];
+
+// in danh sach theo gioi tinh
+
+// xep loai hs, tinh diem tb
+/*
+< 5 yeu
+>= 6.5 kha
+> 8 gioi
+In ra danh sach hs theo hang
+*/
