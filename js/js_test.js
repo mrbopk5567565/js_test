@@ -145,6 +145,12 @@ var students = [
         math: 2,
         English: 6,
     },
+    {
+        name: 'Trang',
+        gender: 'male',
+        math: 10,
+        English: 10,
+    },
 ];
 
 // in danh sach theo gioi tinh
@@ -178,3 +184,55 @@ function dislayArr(arrStudents){
 
 dislayArr(arrStMale);
 dislayArr(arrStFemale);
+
+var arrStYeu = [];
+var arrStTb = [];
+var arrStKha = [];
+var arrStGioi = [];
+
+// phan loai hs (yeu, tb, kha, gioi)
+for (var i = 0; i < students.length; i++){
+    var diemTB = (students[i].math + students[i].English) / 2;
+    if (diemTB < 5){
+        arrStYeu.push(students[i]);
+    } else if (diemTB >= 5 && diemTB < 6.5){
+        arrStTb.push(students[i]);
+    } else if (diemTB < 8){
+        arrStKha.push(students[i]);
+    } else if (diemTB <= 10){
+        arrStGioi.push(students[i]);
+    }
+}
+
+
+// sap xep theo hang
+console.log('test hs yeu: ', arrStYeu);
+console.log('test hs tb: ', arrStTb);
+console.log('test hs kha: ', arrStKha);
+console.log('test hs gioi: ', arrStGioi);
+
+function sortFunc(){
+    students.sort(function(a,b){
+        var tb1 = (a.math + a.English) / 2;
+        var tb2 = (b.math + b.English) / 2;
+        return tb1 - tb2;
+    });
+}
+
+sortFunc();
+
+// var flag_tb = 0;
+
+// for (var i = 0; i < students.length; i++){
+//     var diemTB_i = (students[i].math + students[i].English) / 2;
+//     for (var j = i + 1; j <  students.length; j++){
+//         var diemTB_j = (students[j].math + students[j].English) / 2;
+//         if (diemTB_i > diemTB_j){
+//             flag_tb = diemTB_i;
+//             diemTB_j = diemTB_i;
+//             diemTB_j = flag_tb;
+//         }
+//     }
+// }
+
+console.log('test sort: ', students);
