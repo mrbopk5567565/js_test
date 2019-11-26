@@ -107,7 +107,7 @@ arr.forEach((num,index) => {
     } else {
         arrEqual10.push(index);
     }
-    console.log(arr[index]);
+    console.log('test parameter 3th: ',arr[index]);
 });
 
 console.log(`The numbers are bigger than 10: ${arrBigger10} `);
@@ -140,7 +140,7 @@ var students = [
         English: 10,
     },
     {
-        name: 'Thinh',
+        name: 'Trong',
         gender: 'male',
         math: 2,
         English: 6,
@@ -156,3 +156,25 @@ var students = [
 > 8 gioi
 In ra danh sach hs theo hang
 */
+
+var arrStMale = [];
+var arrStFemale = [];
+for (var i = 0; i < students.length; i++){
+    if (students[i].gender === 'male'){
+        arrStMale.push(students[i]);
+    } else{
+        arrStFemale.push(students[i]);
+    }
+}
+
+function dislayArr(arrStudents){
+    arrStudents.forEach((arr, index) => {
+        console.log(`Name: ${arr.name} / gender: ${arr.gender} / math: ${arr.math} / English: ${arr.English}`);
+    });
+}
+
+// console.log('Male: ', dislayArr(arrStMale));
+// console.log('FeMale: ', dislayArr(arrStFemale));
+
+dislayArr(arrStMale);
+dislayArr(arrStFemale);
