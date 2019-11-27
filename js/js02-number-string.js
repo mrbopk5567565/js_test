@@ -29,6 +29,7 @@ function calculateBMI(weight = 50, height = 1.6) {
 
 // Codelab: Tính chu vi đường tròn:
 const r = 12;
+
 function chuviDuongtron(r) {
 	return 2 * 3.14 * r;
 }
@@ -51,7 +52,7 @@ sum(1, 2, 3, 4, 5);
 
 // function expression
 // anonymous function
-const plus = function(a, b) {
+const plus = function (a, b) {
 	return a + b;
 };
 
@@ -100,7 +101,7 @@ console.log('Combination: ', (a + b) * 5);
 
 // Imprecise calculation
 // console.log('\n--- Imprecise calculation ---');
-console.log('0.1 + 0.2 = ', 0.1 + 0.2, (0.1 + 0.2).toFixed(1));
+console.log('0.1 + 0.2 = ', 0.1 + 0.2, (0.1 + 0.2).toFixed(2));
 
 console.log(
 	'Compare 0.3 vs 0.1 + 0.2: ',
@@ -123,7 +124,7 @@ console.log(
 	Number.parseInt('100') + 23,
 	'100' + 23,
 	23 + '100',
-	'123' - 0
+	'123' - 3
 );
 console.log(
 	'Parse string to float',
@@ -157,15 +158,34 @@ const name2 = "Cod'er";
 
 const formatName = `My
 name
-is ${name} ${1 + 2}`;
+is ${name} ${name2} ${1 + 2}`;
 console.log(formatName, formatName.length);
 
 // access character:
 let hello = 'Rich';
-console.log(hello[0]); // R
+console.log('Rich', hello[0]); // R
+console.log('Rich', hello[1]);
+console.log('Rich', hello[2]);
+console.log('Rich', hello[3]);
+console.log('Rich', hello[4]);
 
 for (const letter of hello) {
 	console.log(letter);
+}
+
+var arr = ['t', 'h', 'i', 'n', 'h'];
+var arr1 = [1, 2, 3, 4, 5];
+var arr2 = [{
+		name: 'thinh',
+		age: 22,
+	},
+	{
+		name: 'tien',
+		age: 20,
+	},
+];
+for (const letter of arr2) {
+	console.log('test_arr', letter.name);
 }
 
 console.log(hello.toUpperCase());
@@ -175,13 +195,15 @@ const str = 'Hello World Javascript';
 console.log('Has World: ', str.includes('World'));
 console.log('Has world: ', str.includes('world'));
 console.log('Has world: ', str.toLowerCase().includes('wOrld'.toLowerCase()));
+console.log('Has Js: ', str.includes('hello'));
+console.log('Has Js: ', str.toLowerCase().includes('jAvascripT'.toLowerCase()));
 
-const name = 'Pooooo';
-console.log(name.indexOf('o'));
-console.log(name.lastIndexOf('o'));
+const name_1 = 'Pooooo';
+console.log(name_1.indexOf('o'));
+console.log(name_1.lastIndexOf('o'));
 
-console.log(name.substring(0));
-console.log(name.slice(0, 2));
+console.log(name_1.substring(0, 3));
+console.log(name_1.slice(0, 2));
 
 // ---------------------------
 // truncate
@@ -204,6 +226,8 @@ if (123 == '123') {
 
 if (123 === '123') {
 	console.log('Hay ah nha, bang roi do');
+} else {
+	console.log('Ua? Khong bang ha? :))');
 }
 
 if (123 !== '123') {
@@ -266,6 +290,68 @@ printMonth(7);
 // ```
 // Cho số tiền. Tính xem cần dùng bao nhiêu tờ 10đ, 5đ, 2đ, 1đ. Ví dụ: 128đ = 12 * 10đ + 1 * 5đ + 1 * 2đ + 1 * 1đ.
 // ```
+
+function quantilyMoney(money) {
+	var count_10 = 0;
+	var count_5 = 0;
+	var count_2 = 0;
+	var count_1 = 0;
+	var flag = 0;
+	count_10 = Math.trunc(money / 10);
+	flag = money - count_10 * 10;
+
+	for (var i = 0; i <= flag / 5; i++){
+		for (var j = 0; j <= flag / 2; j++){
+			for (var k = 0; k <= flag; k++){
+				if ( 5 * i + 2 * j + k == flag){
+					count_5 = i;
+					count_2 = j;
+					count_1 = k;
+				}
+			}
+		}
+	}
+
+	// switch (flag) {
+	// 	case 1:
+	// 		count_1++;
+	// 		break;
+	// 	case 2:
+	// 		count_2++;
+	// 		break;
+	// 	case 3:
+	// 		count_1++;
+	// 		count_2++;
+	// 		break;
+	// 	case 4:
+	// 		count_2 += 2;
+	// 		break;
+	// 	case 5:
+	// 		count_5++;
+	// 		break;
+	// 	case 6:
+	// 		count_1++;
+	// 		count_5++;
+	// 		break;
+	// 	case 7:
+	// 		count_2++;
+	// 		count_5++;
+	// 		break;
+	// 	case 8:
+	// 		count_1++;
+	// 		count_2++;
+	// 		count_5++;
+	// 		break;
+	// 	case 9:
+	// 		count_2 += 2;
+	// 		count_5++;
+	// 		break;
+	// }
+
+	return console.log(`tien 10: ${count_10} / tien 5: ${count_5} / tien 2: ${count_2} / tien 1: ${count_1} flag: ${flag}`);
+}
+
+quantilyMoney(129);
 
 // ```
 // Tính tiền taxi biết:
