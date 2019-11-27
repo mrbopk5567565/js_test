@@ -361,6 +361,23 @@ quantilyMoney(129);
 // Nếu hơn 120km thì đc giảm 10%
 // ```
 
+function moneyTaxi(km){
+	let price = 0;
+	if (km <= 1){
+		price = km * 15000;
+	} else if (km <= 6){
+		price = 15000 + 13500 * (km - 1);
+	} else if (km > 6){
+		price = 15000 + 13500 * 6 + 11000 * (km - 6);
+	}
+	if (km >= 120){
+		price = price - price * (0.1);
+	}
+	return console.log('Tinh tien taxi: ', price);
+}
+
+moneyTaxi(120)
+
 function checkWhoIAm(power) {
 	if (power < 0) {
 		console.log("You're nothing! ~.~");
