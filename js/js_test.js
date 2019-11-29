@@ -227,21 +227,41 @@ function sortFunc(){
 
 // sortFunc();
 
-// ham sap xep
-var flag_tb = 0;
-for (var i = 0; i < students.length; i++){
-    var diemTB_i = (students[i].math + students[i].English) / 2;
-    for (var j = i + 1; j < students.length; j++){
-        var diemTB_j = (students[j].math + students[j].English) / 2;
-        if (diemTB_i > diemTB_j){
-            // flag_tb = diemTB_j;
-            // diemTB_j = diemTB_i;
-            // diemTB_i = flag_tb;
+// ham sap xepp
+// var flag_tb = 0;
+// for (var i = 0; i < students.length; i++){
+//     var diemTB_i = (students[i].math + students[i].English) / 2;
+//     for (var j = i + 1; j < students.length; j++){
+//         var diemTB_j = (students[j].math + students[j].English) / 2;
+//         if (diemTB_i > diemTB_j){
+//             // flag_tb = diemTB_j;
+//             // diemTB_j = diemTB_i;
+//             // diemTB_i = flag_tb;
 
-            flag_tb = students[j];
-            students[j] = students[i];
-            students[i] = flag_tb;
-        }
+//             flag_tb = students[j];
+//             students[j] = students[i];
+//             students[i] = flag_tb;
+//         }
+//     }
+// }
+
+var i = 0;
+for (var j = 0; j < students.length; j++){
+    var diemTB_i = (students[i].math + students[i].English) / 2;
+    var diemTB_j = (students[j].math + students[j].English) / 2;
+    
+    if (diemTB_i > diemTB_j){
+        // flag_tb = diemTB_j;
+        // diemTB_j = diemTB_i;
+        // diemTB_i = flag_tb;
+
+        flag_tb = students[j];
+        students[j] = students[i];
+        students[i] = flag_tb;
+    }
+    if (j == students.length - 1){
+        i++;
+        j = i;
     }
 }
 
