@@ -173,6 +173,12 @@ for (var i = 0; i < students.length; i++){
     }
 }
 
+/* for ... of
+for (const std of students){
+    console.log(std);
+}
+*/
+
 function dislayArr(arrStudents){
     arrStudents.forEach((arr, index) => {
         console.log(`Name: ${arr.name} / gender: ${arr.gender} / math: ${arr.math} / English: ${arr.English}`);
@@ -219,20 +225,26 @@ function sortFunc(){
     });
 }
 
-sortFunc();
+// sortFunc();
 
-// var flag_tb = 0;
+// ham sap xep
+var flag_tb = 0;
+for (var i = 0; i < students.length; i++){
+    var diemTB_i = (students[i].math + students[i].English) / 2;
+    for (var j = i + 1; j < students.length; j++){
+        var diemTB_j = (students[j].math + students[j].English) / 2;
+        if (diemTB_i > diemTB_j){
+            // flag_tb = diemTB_j;
+            // diemTB_j = diemTB_i;
+            // diemTB_i = flag_tb;
 
-// for (var i = 0; i < students.length; i++){
-//     var diemTB_i = (students[i].math + students[i].English) / 2;
-//     for (var j = i + 1; j <  students.length; j++){
-//         var diemTB_j = (students[j].math + students[j].English) / 2;
-//         if (diemTB_i > diemTB_j){
-//             flag_tb = diemTB_i;
-//             diemTB_j = diemTB_i;
-//             diemTB_j = flag_tb;
-//         }
-//     }
-// }
+            flag_tb = students[j];
+            students[j] = students[i];
+            students[i] = flag_tb;
+        }
+    }
+}
 
 console.log('test sort: ', students);
+
+
