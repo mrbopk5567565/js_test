@@ -1,12 +1,11 @@
-var arr = [1,2,3];
+var arr = [1, 2, 3];
 // console.log(arr.length);
 
 var student = {
     names: 'John',
     age: 20,
     isMarried: false,
-    friends: [
-        {
+    friends: [{
             name: 'Ann',
             age: 21,
         },
@@ -15,7 +14,7 @@ var student = {
             age: 23,
         },
     ],
-    func: function(){
+    func: function () {
         console.log('hello thinh');
     }
 }
@@ -24,10 +23,10 @@ var student = {
 
 // console.log(student.friends[1].name)
 
-function sum(){
+function sum() {
     let s = 0;
 
-    for (let i = 0; i <  arguments.length; i++){
+    for (let i = 0; i < arguments.length; i++) {
         s += arguments[i];
     }
     console.log(s)
@@ -46,15 +45,15 @@ var student2 = {
     gender: 'female'
 };
 
-function greeting(student){
-    if (!student || !student.gender){
+function greeting(student) {
+    if (!student || !student.gender) {
         // !student khong so sanh gi == null,"",0,undefined
         return console.log('Data is invalid');
     }
-    if (student.gender === 'male'){
+    if (student.gender === 'male') {
         console.log('Hello Mr.' + student.name);
         console.log(`Helle Mr. ${student.name} / gender: ${student.gender}`);
-    } else if (student.gender === 'female'){
+    } else if (student.gender === 'female') {
         console.log('Hello Ms.' + student.name);
     } else {
         console.log('Hello LJBT');
@@ -70,9 +69,8 @@ var arrBigger10 = [];
 var arrSmaller10 = [];
 var arrEqual10 = [];
 
-for (let i = 0;  i < arr.length; i++){
-    if (arr[i] > 10)
-    {
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 10) {
         arrBigger10.push(arr[i]);
     } else if (arr[i] < 10) {
         arrSmaller10.push(arr[i]);
@@ -98,24 +96,22 @@ for (let i = 0;  i < arr.length; i++){
 // });
 
 // cach viet function forEach arrow ==>
-arr.forEach((num,index) => {
-    if (num > 10)
-    {
+arr.forEach((num, index) => {
+    if (num > 10) {
         arrBigger10.push(num);
     } else if (num < 10) {
         arrSmaller10.push(num);
     } else {
         arrEqual10.push(index);
     }
-    console.log('test parameter 3th: ',arr[index]);
+    console.log('test parameter 3th: ', arr[index]);
 });
 
 console.log(`The numbers are bigger than 10: ${arrBigger10} `);
 console.log(`The numbers are smaller than 10: ${arrSmaller10} `);
 console.log(`The position of the numbers equal 10: ${arrEqual10} `);
 
-var students = [
-    {
+var students = [{
         name: 'Thinh',
         gender: 'male',
         math: 5,
@@ -165,10 +161,10 @@ In ra danh sach hs theo hang
 
 var arrStMale = [];
 var arrStFemale = [];
-for (var i = 0; i < students.length; i++){
-    if (students[i].gender === 'male'){
+for (var i = 0; i < students.length; i++) {
+    if (students[i].gender === 'male') {
         arrStMale.push(students[i]);
-    } else{
+    } else {
         arrStFemale.push(students[i]);
     }
 }
@@ -179,7 +175,7 @@ for (const std of students){
 }
 */
 
-function dislayArr(arrStudents){
+function dislayArr(arrStudents) {
     arrStudents.forEach((arr, index) => {
         console.log(`Name: ${arr.name} / gender: ${arr.gender} / math: ${arr.math} / English: ${arr.English}`);
     });
@@ -197,15 +193,15 @@ var arrStKha = [];
 var arrStGioi = [];
 
 // phan loai hs (yeu, tb, kha, gioi)
-for (var i = 0; i < students.length; i++){
+for (var i = 0; i < students.length; i++) {
     var diemTB = (students[i].math + students[i].English) / 2;
-    if (diemTB < 5){
+    if (diemTB < 5) {
         arrStYeu.push(students[i]);
-    } else if (diemTB >= 5 && diemTB < 6.5){
+    } else if (diemTB >= 5 && diemTB < 6.5) {
         arrStTb.push(students[i]);
-    } else if (diemTB < 8){
+    } else if (diemTB < 8) {
         arrStKha.push(students[i]);
-    } else if (diemTB <= 10){
+    } else if (diemTB <= 10) {
         arrStGioi.push(students[i]);
     }
 }
@@ -217,8 +213,8 @@ console.log('test hs tb: ', arrStTb);
 console.log('test hs kha: ', arrStKha);
 console.log('test hs gioi: ', arrStGioi);
 
-function sortFunc(){
-    students.sort(function(a,b){
+function sortFunc() {
+    students.sort(function (a, b) {
         var tb1 = (a.math + a.English) / 2;
         var tb2 = (b.math + b.English) / 2;
         return tb1 - tb2;
@@ -246,11 +242,11 @@ function sortFunc(){
 // }
 
 var i = 0;
-for (var j = 0; j < students.length; j++){
+for (var j = 0; j < students.length; j++) {
     var diemTB_i = (students[i].math + students[i].English) / 2;
     var diemTB_j = (students[j].math + students[j].English) / 2;
-    
-    if (diemTB_i > diemTB_j){
+
+    if (diemTB_i > diemTB_j) {
         // flag_tb = diemTB_j;
         // diemTB_j = diemTB_i;
         // diemTB_i = flag_tb;
@@ -259,7 +255,7 @@ for (var j = 0; j < students.length; j++){
         students[j] = students[i];
         students[i] = flag_tb;
     }
-    if (j == students.length - 1){
+    if (j == students.length - 1) {
         i++;
         j = i;
     }
@@ -267,4 +263,13 @@ for (var j = 0; j < students.length; j++){
 
 console.log('test sort: ', students);
 
-
+var person = {
+    name: 'Harry Potter',
+    doSomething() {
+        var self = this;
+        setTimeout(function () {
+            console.log(`This is ${self.name}`);
+        }, 1000);
+    },
+};
+person.doSomething();

@@ -7,12 +7,54 @@
                 width: 300px;
                 height: 200px;
                 background: yellow;
+                box-sizing: border-box;
+            }
+            .deck{
+                color: #2980b9;
+                font-size: 24px;
             }
         </style>
+        <script>
+            function changeDiv(){
+                // document.getElementById('d1').style.background = 'red';
+                // document.getElementById('d1').style.width = '400px';
+                // document.getElementById('d1').style.height = '400px';
+                // alert('a');
+
+                // select
+                let a = document.getElementById('d1');
+                let b = document.getElementById('d2');
+                
+                // change html
+                // a.innerHTML = '<h1>New content</h1>';
+                a.innerHTML += ' 23'
+
+                // change css
+                a.style.fontSize = '60px';
+                // a.style.width = '500px';
+                a.style.color = '#8e44ad';
+                a.style.background = '#2ecc71';
+                a.style.border = '5px solid red';
+                a.style.borderRadius = '15px';
+
+                // change attributes
+                b.className = 'deck';
+                a.title = 'More description';
+
+                let pass = document.getElementById('password');
+                pass.value = '456';
+                alert(pass.value);
+            }
+        </script>
     </head>
     <body>
-        <div class="card" id="d1">This is a div</div>
+        <div class="card" id="d1">This is a div 1</div>
+        <div class="card" id="d2">This is a div 2</div>
         <button id="b1" onclick="changeDiv()">Click me</button>
+        <div>
+            <label for="password">password</label>
+            <input type="password" placeholder="password field" id="password" name="password" value="">
+        </div>
 
         <!-- <script src="./js/js02-number-string.js"></script> -->
         <script src="./js/js_test.js"></script>
