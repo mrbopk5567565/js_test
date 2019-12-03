@@ -114,9 +114,9 @@ const person = {
 // call object's method
 person.sayHi();
 
-// console.log(
-//   person.address.street
-// );
+console.log(
+  person.address.street
+);
 
 // example: nested object and method
 const group = {
@@ -171,7 +171,9 @@ console.log(getWeekday2(23));
 let string = 'abc';
 let obj = {
 	name: 'JavaScript',
+	year: 2019,
 };
+console.log('1st: ',obj);
 // pass by value -> primitive values
 
 // pass by reference
@@ -219,5 +221,8 @@ let arr = [1, -2, 3, -5];
 console.log(arr.filter(item => item > 0));
 
 let createObject = newName => ({ name: newName });
+// let createObject = function(newName){
+// 	return ({name: newName});
+// }
 
 console.log(createObject('Thanh'));

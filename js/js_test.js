@@ -149,6 +149,22 @@ var students = [{
     },
 ];
 
+const studentNames = students.map((student, idx) => ({
+    name: student.name,
+    gender: student.gender,
+    index: idx,
+}))
+
+// const studentNames = students.map(function(student, idx){
+//     return student.name;
+// })
+
+console.log('Name of students: ', studentNames)
+
+const maleStudents = students.filter((std) => std.gender === 'male')
+
+console.log('Male in students: ', maleStudents)
+
 // in danh sach theo gioi tinh
 
 // xep loai hs, tinh diem tb
@@ -224,7 +240,7 @@ function sortFunc() {
 // sortFunc();
 
 // ham sap xepp
-// var flag_tb = 0;
+var flag_tb = 0;
 // for (var i = 0; i < students.length; i++){
 //     var diemTB_i = (students[i].math + students[i].English) / 2;
 //     for (var j = i + 1; j < students.length; j++){
@@ -261,6 +277,25 @@ for (var j = 0; j < students.length; j++) {
     }
 }
 
+// students.forEach((std, idx) => {
+//     var diemTB_i = (students[i].math + students[i].English) / 2;
+//     var diemTB_j = (std.math + std.English) / 2;
+
+//     if (diemTB_i > diemTB_j) {
+//         // flag_tb = diemTB_j;
+//         // diemTB_j = diemTB_i;
+//         // diemTB_i = flag_tb;
+
+//         flag_tb = students[idx];
+//         students[idx] = students[i];
+//         students[i] = flag_tb;
+//     }
+//     if (idx == students.length - 1) {
+//         i++;
+//         idx = i;
+//     }
+// })
+
 console.log('test sort: ', students);
 
 var person = {
@@ -273,3 +308,75 @@ var person = {
     },
 };
 person.doSomething();
+
+
+
+// object
+const myObject = {
+    name: 'John',
+    getName(){
+        return this.name;
+    }
+}
+
+console.log(myObject.getName());
+
+{
+    let blockVar = 'hi';
+    var obj = {
+        get blockVar(){
+            return blockVar;
+        },
+        set blockVar(val){
+            blockVar = val;
+        }
+    }
+}
+
+console.log(obj.blockVar)
+console.log(obj.blockVar = 'hello')
+
+
+function x(n){
+    return function(m){
+        return m + n;
+    }
+}
+
+const myX = x(3);
+
+console.log(x(1)(2))
+console.log(myX(5))
+
+const myTranslation = {
+    en: {
+        title: 'My title',
+        content: 'My content',
+    },
+    vi: {
+        title: 'Tieu de',
+        content: 'Noi dunng',
+    }
+}
+
+function translator(language){
+    return function(textLable){
+        return myTranslation[language][textLable];
+    }
+}
+
+const myTrans = translator('vi');
+console.log(myTrans('title'))
+console.log(myTrans('content'))
+
+// map()
+const arrs = ["Harry Potter", "Hermione", "Ron Weasly"];
+const age1 = [];
+const arrsModify = arrs.map((name,idx,arrsName) => (
+    {
+        // dat ten trung nhau nen :
+        name,
+        // name: name
+    }
+))
+console.log(arrsModify)
