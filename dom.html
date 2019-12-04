@@ -1,66 +1,154 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>DOM</title>
-        <style>
-            .card{
-                width: 300px;
-                height: 200px;
-                background: yellow;
-                box-sizing: border-box;
+
+<head>
+    <title>DOM</title>
+    <style>
+        .card {
+            width: 300px;
+            height: 200px;
+            background: yellow;
+            box-sizing: border-box;
+        }
+
+        .deck {
+            color: #2980b9;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function changeDiv() {
+            // document.getElementById('d1').style.background = 'red';
+            // document.getElementById('d1').style.width = '400px';
+            // document.getElementById('d1').style.height = '400px';
+            // alert('a');
+
+            // select
+            // let a = document.getElementById('d1');
+            let b = document.getElementById('d2');
+            let c = document.getElementById('d3');
+            // select by querySeclector
+            let a = document.querySelector('#d1');
+            // querySelectorAll: choose all class/id same together --> return d is array
+            let d = document.querySelectorAll('.card');
+            console.log('querySelectorAll: ', d);
+            // use for/forEach to run : d
+            // d[1].classList.toggle('deck');
+
+            // change html
+            // a.innerHTML = '<h1>New content</h1>';
+            a.innerHTML += ' 23'
+
+            // change css
+            a.style.fontSize = '60px';
+            // a.style.width = '500px';
+            a.style.color = '#8e44ad';
+            a.style.background = '#2ecc71';
+            a.style.border = '5px solid red';
+            a.style.borderRadius = '15px';
+
+            // change attributes
+            // change class for the element div tag 
+            b.className = 'card deck';
+            a.title = 'More description';
+
+            let pass = document.getElementById('password');
+            pass.value = '456';
+            // alert(pass.value);
+
+            // attribute toggle: 
+            /*
+            if (div has class 'deck'){
+                remove class 'deck'
+            } else {
+                add class 'deck'
             }
-            .deck{
-                color: #2980b9;
-                font-size: 24px;
+            */
+            c.classList.toggle('deck');
+            // c.classList.add('deck');
+            // c.classList.remove('deck')
+
+
+            // use element tag createElemnt()
+            let listDay = createListDay('Ngày', 31);
+            let listMonth = createListMonth('Tháng', 12);
+            // document.querySelector('#d2').appendChild(listDay);
+            // document.querySelector('#d3').appendChild(createListMonth('Thang', 12));
+            // d được khai báo ở trên querySelectorAll()
+            for (let i = 0; i < d.length; i++) {
+                d[i].appendChild(listDay.cloneNode(true));
+                // d[i].appendChild(listMonth.cloneNode(true))
+                // cloneNode : tạo bản sao
             }
-        </style>
-        <script>
-            function changeDiv(){
-                // document.getElementById('d1').style.background = 'red';
-                // document.getElementById('d1').style.width = '400px';
-                // document.getElementById('d1').style.height = '400px';
-                // alert('a');
 
-                // select
-                let a = document.getElementById('d1');
-                let b = document.getElementById('d2');
-                
-                // change html
-                // a.innerHTML = '<h1>New content</h1>';
-                a.innerHTML += ' 23'
+            // remove element
+            document.querySelector('#d2 h2').remove();
+        }
 
-                // change css
-                a.style.fontSize = '60px';
-                // a.style.width = '500px';
-                a.style.color = '#8e44ad';
-                a.style.background = '#2ecc71';
-                a.style.border = '5px solid red';
-                a.style.borderRadius = '15px';
-
-                // change attributes
-                b.className = 'deck';
-                a.title = 'More description';
-
-                let pass = document.getElementById('password');
-                pass.value = '456';
-                alert(pass.value);
+        function createListDay(lable, n) {
+            let select = document.createElement('select');
+            for (let i = 0; i < n; i++) {
+                let option = document.createElement('option');
+                option.value = i + 1;
+                option.text = lable + ' ' + (i + 1);
+                select.appendChild(option);
             }
-        </script>
-    </head>
-    <body>
-        <div class="card" id="d1">This is a div 1</div>
-        <div class="card" id="d2">This is a div 2</div>
-        <button id="b1" onclick="changeDiv()">Click me</button>
-        <div>
-            <label for="password">password</label>
-            <input type="password" placeholder="password field" id="password" name="password" value="">
-        </div>
+            return select;
+        }
 
-        <!-- <script src="./js/js02-number-string.js"></script> -->
-        <script src="./js/js_test.js"></script>
-        <!-- <script src="./js/js03-string-if.js"></script> -->
-        <!-- <script src="./js/js04-arrays-for-loop.js"></script> -->
-        <!-- <script src="./js/js_11292019.js"></script> -->
-        <!-- <script src="./js/js05-objects-arrow-function.js"></script> -->
-    </body>
+        function createListMonth(lable, n) {
+            let select = document.createElement('select');
+            for (let i = 0; i < n; i++) {
+                let option = document.createElement('option');
+                option.value = i + 1;
+                option.text = lable + ' ' + (i + 1);
+                select.appendChild(option);
+            }
+            return select;
+        }
+
+        // create event onclick for button has id: b1
+        // c1: 
+        window.onload = function(){
+            var button = document.querySelector('#b1');
+            button.addEventListener('click', changeDiv);
+            // button.onclick = changeDiv;
+        }
+        // c2: put tag script under tag body
+    </script>
+</head>
+
+<body>
+    <!-- <select name="" id="">
+            <option value="1">Ngày 1</option>
+            <option value="2">Ngày 2</option>
+            <option value="3">Ngày 3</option>
+        </select> -->
+    <div class="card" id="d1">This is a div 1</div>
+    <div class="card" id="d2">This is a div 2
+        <h2>Heading in div 2</h2>
+    </div>
+    <div class="card" id="d3">This is a div 3 (example for attributes toggle())</div>
+    <!-- onclick="changeDiv()" -->
+    <button id="b1">Click me</button>
+    <div>
+        <label for="password">password</label>
+        <input type="password" placeholder="password field" id="password" name="password" value="">
+    </div>
+
+    <!-- <script src="./js/js02-number-string.js"></script> -->
+    <script src="./js/js_test.js"></script>
+    <!-- <script src="./js/js03-string-if.js"></script> -->
+    <!-- <script src="./js/js04-arrays-for-loop.js"></script> -->
+    <!-- <script src="./js/js_11292019.js"></script> -->
+    <!-- <script src="./js/js05-objects-arrow-function.js"></script> -->
+    <!-- <script>
+        var button = document.querySelector('#b1');
+        // c1
+        button.addEventListener('click', changeDiv);
+        // c2
+        // button.onclick = changeDiv;
+    </script> -->
+</body>
+
 </html>
