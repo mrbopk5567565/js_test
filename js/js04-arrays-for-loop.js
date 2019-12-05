@@ -155,8 +155,9 @@ console.log('find 5:', numbers.find(number => number > 7))
 
 // Includes
 numbers = [4, 5, 6];
-console.log(numbers.includes(5));
-console.log(numbers.includes(7));
+numbers_test = [[4, 5, 6],[1, 2, 3],[7, 8, 9]];
+console.log(numbers_test[1].includes(5));
+console.log(numbers_test[2].includes(7));
 
 // LAB: Merge two arrays and remove duplication. [1, 2, 3] and [2, 3, 4, 5] = [1, 2, 3, 4, 5]
 // LAB: Remove all duplication of an array.

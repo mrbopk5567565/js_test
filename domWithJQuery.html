@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        .card {
+            width: 300px;
+            height: 200px;
+            background: yellow;
+            box-sizing: border-box;
+        }
+
+        .deck {
+            color: #2980b9;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function changeDiv() {
+
+            // ôn bài cũ; không liên quan lắm  
+            /*
+            var a = document.querySelector('#d1');
+            a.classList.toggle('deck');
+            let listMonth = createListMonth('Tháng', 12)    
+            a.appendChild(listMonth)
+            */
+            // select
+            var a = $('#d1');
+            $('#d2')
+
+            // change HTML
+            // get
+            console.log(a.html());
+            // set
+            a.html('new content')
+
+            // change css
+            a.css('color','red')
+            a.css('font-size','24px')
+            $('#d2').css('fontSize', '30px')
+            $('#d3').css({
+                'color':'blue',
+                'fontSize':'30px',
+            })
+
+            // get value
+            $('#password').val();
+            // alert($('#password').val())
+            // set value
+            $('#password').val('')
+
+            $('#password').val('123').css({'backgroundColor':'green', 'color':'white'})
+
+            // hide() and toggle()
+            a.hide(1000);
+            $('#d2').toggle(1000)
+            // animation toggle()
+            $('#d3').slideToggle(1000)
+
+
+            // tương tác với nhiều div
+            // question: lam sao de tuong tac vs tung div rieng le // co the dung nth-child dc ko
+            var b = $('.card');
+            console.log(b = $('.card')) // return array
+            b.hide(2000)
+        }
+
+        function createListMonth(lable, n) {
+            let select = document.createElement('select');
+            for (let i = 0; i < n; i++) {
+                let option = document.createElement('option');
+                option.value = i + 1;
+                option.text = lable + (i + 1);
+                select.appendChild(option);
+            }
+            return select;
+        }
+
+        // window.onload = function(){
+        //     var button = document.querySelector('#b1');
+        //     // button.addEventListener('click',changeDiv);
+        //     button.onclick = changeDiv;
+        // }
+
+        $(function () {
+            // giống chức năng với function dưới, mà gọn hơn
+        })
+
+        $(document).ready(function () {
+            // hàm này giống với window.onload = function(){}
+            // alert('hello')
+
+            // select by jquery
+            // var button = document.querySelector('#b1');
+            // var button = $('#b1');
+            // button.click
+            $('#b1').click(changeDiv)
+
+        })
+    </script>
+</head>
+
+<body>
+    <!-- <select name="" id="">
+            <option value="1">Ngày 1</option>
+            <option value="2">Ngày 2</option>
+            <option value="3">Ngày 3</option>
+        </select> -->
+    <div class="card" id="d1">This is a div 1</div>
+    <div class="card" id="d2">This is a div 2
+        <h2>Heading in div 2</h2>
+    </div>
+    <div class="card" id="d3">This is a div 3 (example for attributes toggle())</div>
+    <!-- onclick="changeDiv()" -->
+    <button id="b1">Click me</button>
+    <div>
+        <label for="password">password</label>
+        <input type="password" placeholder="password field" id="password" name="password" value="">
+    </div>
+</body>
+
+</html>
