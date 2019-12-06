@@ -380,3 +380,25 @@ const arrsModify = arrs.map((name,idx,arrsName) => (
     }
 ))
 console.log(arrsModify)
+
+const area = function(w, h){
+    return (w + h) * 2;
+}
+
+const retangle = {
+    w: 50,
+    h: 40,
+    area: area(this.w + this.h),
+}
+
+const {w, h} = retangle;
+
+console.log('w: ', w, '// h: ', h);
+
+var arrrasda = {
+    asda: 'asd',
+}
+console.log(arrrasda)
+
+arrrasda = {age: '34', ...arrrasda, name: 'thinh'}
+console.log(arrrasda)
