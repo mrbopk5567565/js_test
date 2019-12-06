@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>tanj1r0 - Timer</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script>
+        var second, timerID;
+        second = 0;
+        timerID = 0;
+
+        function showTimer() {
+            second++;
+
+            var ss = second % 60;
+            var mm = Math.floor(second / 60);
+
+            // format mm:ss
+            if (ss < 10) {
+                ss = '0' + ss;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            document.querySelector('#timer').innerHTML = mm + ':' + ss;
+        }
+
+
+        function startTimer() {
+            timerID = setInterval(showTimer, 1000);
+            // console.log(timerID);
+        }
+
+        function stopTimer() {
+            clearInterval(timerID);
+        }
+
+        // setTimeout(startTimer, 1000);
+        
+    </script>
+</head>
+
+<body>
+    <div id="timer">This is a timer</div>
+    <button id="start" onclick="startTimer()">Start</button>
+    <button id="stop" onclick="stopTimer()">Stop</button>
+</body>
+
+</html>
