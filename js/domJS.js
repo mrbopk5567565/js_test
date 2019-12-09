@@ -46,10 +46,18 @@ for (let i = 0; i < students.length; i++){
 
 console.log(students)
 
+function averegeCalc(){
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++){
+        sum += arguments[i];
+    }
+    return sum / arguments.length;
+}
+
 let myHtml = '';
 
 for (let i = 0; i < students.length; i++) {
-    var diemTB = (students[i].math + students[i].English) / 2;
+    var diemTB = averegeCalc(students[i].math,students[i].English);
     myHtml += '<tr>' +
         `<td> ${i + 1} </td>` +
         `<td> ${students[i].name} </td>` +
@@ -62,26 +70,25 @@ for (let i = 0; i < students.length; i++) {
 
 let data = document.getElementById('dataCell');
 
-function showData(){
-    var display = document.getElementById('table')
-    display.classList.toggle('undisplay');
-}
-
-// var isDisplayed = false;
-
-// hamburger.addEventListener('click',function(){
-//     if (isDisplayed){
-//         navList.classList.remove('displayed');
-//     } else {
-//         navList.classList.add('displayed');
-//     }
-//     isDisplayed = !isDisplayed;
-// });
-
 let button = document.getElementById('click');
+var isDisplayed = true;
 button.addEventListener('click', function(){
-    showData();
+    var display = document.getElementById('dataCell')
+    // display.classList.toggle('undisplay');
+
     data.innerHTML = myHtml;
+
+    if (isDisplayed){
+        button.textContent = 'Hide Data';
+        // display.style.display = 'block';
+        display.classList.remove('undisplay');
+    } else {
+        button.textContent = 'View Data';
+        // display.classList.add('undisplay');
+        // display.style.display = 'none';
+        display.classList.add('undisplay');
+    }
+    isDisplayed = !isDisplayed;
 })
 
 

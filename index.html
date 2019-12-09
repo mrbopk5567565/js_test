@@ -4,10 +4,10 @@
         <title>My name is tanj1r0</title>
         <style>
             table{
-                border: 1px solid red;
-            }
-            td{
+                margin-top: 10px;
                 /* border: 1px solid red; */
+                border-collapse: collapse;
+                /* width: 100%; */
             }
             .display{
                 
@@ -15,23 +15,51 @@
             .undisplay{
                 visibility: hidden;
             }
+            tr:nth-child(odd){
+                background: #dfe4ea;
+            }
+            tr:nth-child(even){
+                background: #eccc68;
+            }
+            th{
+                padding: 5px 10px;
+                border: 1px solid black;
+                text-align: center;
+                background: #2ecc71;
+                color: white;
+            }
+            td{
+                padding: 5px 10px;
+                border: 1px solid black;
+                text-align: left;
+            }
+            th, td{
+                padding: 15px;
+                width: 100px;
+            }
+            td:hover {
+                background: #bdc3c7;
+            }
+            button{
+                
+            }
         </style>
     </head>
     <body>
-        <button id="click">Click me</button>
-        <table id="table" class="display">
+        <button id="click">View Data</button>
+        <table id="table">
             <thead>
                 <!-- tr: table row -->
                 <tr>
-                    <td>ORDER</td>
-                    <td>NAME</td>
-                    <td>GENDER</td>
-                    <td>MATH</td>
-                    <td>ENGLISH</td>
-                    <td>AVEREGE</td>
+                    <th>ORDER</th>
+                    <th>NAME</th>
+                    <th>GENDER</th>
+                    <th>MATH</th>
+                    <th>ENGLISH</th>
+                    <th>AVEREGE</th>
                 </tr>
             </thead>
-            <tbody id="dataCell">
+            <tbody id="dataCell" class="display">
             </tbody>
         </table>
 
