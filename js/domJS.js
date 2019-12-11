@@ -60,45 +60,59 @@ var students = [{
     },
 ];
 
-for (let i = 0; i < students.length; i++){
+for (let i = 0; i < students.length; i++) {
     students[i].averege = (students[i].math + students[i].English) / 2;
 }
 
 console.log(students)
 
-function averegeCalc(){
+function averegeCalc() {
     let sum = 0;
-    for (let i = 0; i < arguments.length; i++){
+    for (let i = 0; i < arguments.length; i++) {
         sum += arguments[i];
     }
     return sum / arguments.length;
 }
 
 let myHtml = '';
+let max = 0;
+let min = 11;
+let positionMax = -1;
+let positionMin = -1;
 
 for (let i = 0; i < students.length; i++) {
-    var diemTB = averegeCalc(students[i].math,students[i].English);
-    myHtml += '<tr>' +
+    var diemTB = averegeCalc(students[i].math, students[i].English);
+    myHtml += '<tr class="tr--student">' +
         `<td> ${i + 1} </td>` +
         `<td> ${students[i].name} </td>` +
         `<td> ${students[i].gender} </td>` +
         `<td> ${students[i].math} </td>` +
         `<td> ${students[i].English} </td>` +
         `<td> ${diemTB} </td>` +
-        '</tr>'
+        '</tr>';
+    if (diemTB > max) {
+        max = diemTB;
+        positionMax = i;
+    }
+
+    if (diemTB < min){
+        min = diemTB;
+        positionMin = i;
+    }
 }
 
 let data = document.getElementById('dataCell');
 
 let button = document.getElementById('click');
 var isDisplayed = true;
-button.addEventListener('click', function(){
+/*
+button.addEventListener('click', function () {
     var display = document.getElementById('dataCell')
     // display.classList.toggle('undisplay');
 
     data.innerHTML = myHtml;
 
-    if (isDisplayed){
+    if (isDisplayed) {
         button.textContent = 'Hide Data';
         // display.style.display = 'block';
         display.classList.remove('undisplay');
@@ -110,34 +124,43 @@ button.addEventListener('click', function(){
     }
     isDisplayed = !isDisplayed;
 })
+*/
+data.innerHTML = myHtml;
 
+let trSt = document.getElementsByClassName('tr--student')
+trSt[positionMax].classList.add('tr--student--max')
+trSt[positionMin].classList.add('tr--student--min')
+
+
+/*
 let parentBtn = document.getElementById('parentBtn');
 let childBtn = document.getElementById('childBtn');
 let childA = document.getElementById('childA');
 
-// parentBtn.addEventListener('click',function(e){
-//     console.log('parent');
-// })
+parentBtn.addEventListener('click',function(e){
+    console.log('parent');
+})
 
-// childBtn.addEventListener('click',function(e){
-//     e.stopPropagation(); // test button chồng lên nhau
-//     e.preventDefault();
-//     // const self = e.target;
-//     const self = e.currentTarget;
-//     console.log('child btn');
-//     console.log(self);
-// })
+childBtn.addEventListener('click',function(e){
+    e.stopPropagation(); // test button chồng lên nhau
+    e.preventDefault();
+    // const self = e.target;
+    const self = e.currentTarget;
+    console.log('child btn');
+    console.log(self);
+})
 
-// childA.addEventListener('click',function(e){
-//     e.preventDefault();
-//     console.log('child A');
-// })
+childA.addEventListener('click',function(e){
+    e.preventDefault();
+    console.log('child A');
+})
 
-// childA.addEventListener('click', function(e){
-//     e.preventDefault(); // làm mất chức năng ban đầu của nó,
-//     // ví dụ như, thẻ <a> thì mất chức năng click vào nhảy trang khác
-//     console.log('child a');
-// })
+childA.addEventListener('click', function(e){
+    e.preventDefault(); // làm mất chức năng ban đầu của nó,
+    // ví dụ như, thẻ <a> thì mất chức năng click vào nhảy trang khác
+    console.log('child a');
+})
+*/
 
 
 // fixed header 
@@ -162,10 +185,10 @@ let position = 0;
 let sticky = nav.offsetTop;
 console.log('vi tri ban dau cua header nav', sticky)
 
-window.addEventListener('scroll', function(e){
+window.addEventListener('scroll', function (e) {
     position = window.scrollY;
     // console.log(position)
-    if (position > (sticky)){
+    if (position > (sticky)) {
         nav.classList.add('nav--display');
     } else {
         nav.classList.remove('nav--display');
@@ -181,21 +204,29 @@ let listSt = document.getElementById('listSt');
 let positionAboutUs = aboutUs.offsetTop;
 let positionListSt = listSt.offsetTop;
 
-clickAboutUs.addEventListener('click',function(e){
+clickAboutUs.addEventListener('click', function (e) {
     e.preventDefault();
     let bodyScrollTop = document.body.scrollTop;
 
     console.log(bodyScrollTop)
 
-    window.scrollTo({left:0, top: positionAboutUs, behavior: 'smooth'});
+    window.scrollTo({
+        left: 0,
+        top: positionAboutUs,
+        behavior: 'smooth'
+    });
     // aboutUs.scrollIntoView({behavior: 'smooth'})
 })
 
-clickListSt.addEventListener('click',function(e){
+clickListSt.addEventListener('click', function (e) {
     e.preventDefault();
 
-    window.scrollTo({left:0, top: positionListSt, behavior: 'smooth'})
-    
+    window.scrollTo({
+        left: 0,
+        top: positionListSt,
+        behavior: 'smooth'
+    })
+
 })
 
 // function scrollToElement(idElement){
@@ -208,4 +239,3 @@ clickListSt.addEventListener('click',function(e){
 
 // let navList = document.getElementsByClassName('nav-list');
 // navList[0].addEventListener('click', scrollToElement(this.id));
-

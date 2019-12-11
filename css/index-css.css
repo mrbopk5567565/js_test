@@ -26,11 +26,20 @@ table {
 }
 
 tr:nth-child(odd) {
-    background: #dfe4ea;
+    /* background: #dfe4ea; */
 }
 
 tr:nth-child(even) {
-    background: #eccc68;
+    /* background: #eccc68; */
+}
+
+/* show student TB Max */
+.tr--student--max{
+    background: red;
+}
+
+.tr--student--min{
+    background: yellow;
 }
 
 th {
