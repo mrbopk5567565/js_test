@@ -9,6 +9,7 @@ img {
 body {
     margin: 0px;
     font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 table {
@@ -71,6 +72,7 @@ button {}
     position: fixed;
     top: 0;
     width: 100%;
+    background: white;
 }
 
 .main-nav {
@@ -90,6 +92,14 @@ button {}
 
 .nav-link{
     text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.nav-link:hover{
+    border-radius: 5px;
+    background: #bdc3c7;
 }
 
 
@@ -97,12 +107,28 @@ button {}
 .about-us{
     display: flex;
     flex-wrap: wrap;
+    margin: 10px 20px;
+    padding: 10px 0;
+}
+
+.about-us:nth-child(odd){
+    background: #bdc3c7;
 }
 
 .about-us--content{
     width: 50%;
 }
 
+.about-us--title{
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
 .about-us--description{
     width: 50%;
+    padding: 0 10px 5px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }

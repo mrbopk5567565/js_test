@@ -34,11 +34,31 @@ var students = [{
         math: 10,
         English: 10,
     },
+    {
+        name: 'Thong',
+        gender: 'male',
+        math: 5,
+        English: 6,
+    },
+    {
+        name: 'Viet',
+        gender: 'male',
+        math: 8,
+        English: 9,
+    },
+    {
+        name: 'Thy',
+        gender: 'female',
+        math: 7,
+        English: 8,
+    },
+    {
+        name: 'Thuong',
+        gender: 'female',
+        math: 2,
+        English: 3,
+    },
 ];
-
-let stds = [{
-
-}]
 
 for (let i = 0; i < students.length; i++){
     students[i].averege = (students[i].math + students[i].English) / 2;
@@ -137,16 +157,55 @@ let nav = document.getElementById('nav');
 //     }
 // })
 
-let position = 0
+//c2
+let position = 0;
+let sticky = nav.offsetTop;
+console.log('vi tri ban dau cua header nav', sticky)
 
 window.addEventListener('scroll', function(e){
     position = window.scrollY;
     // console.log(position)
-    if (position != 0){
+    if (position > (sticky)){
         nav.classList.add('nav--display');
     } else {
         nav.classList.remove('nav--display');
     }
 })
 
+// event click to section
+let clickAboutUs = document.getElementById('nav-aboutus');
+let clickListSt = document.getElementById('nav-listst');
+
+let aboutUs = document.getElementById('aboutUs');
+let listSt = document.getElementById('listSt');
+let positionAboutUs = aboutUs.offsetTop;
+let positionListSt = listSt.offsetTop;
+
+clickAboutUs.addEventListener('click',function(e){
+    e.preventDefault();
+    let bodyScrollTop = document.body.scrollTop;
+
+    console.log(bodyScrollTop)
+
+    window.scrollTo({left:0, top: positionAboutUs, behavior: 'smooth'});
+    // aboutUs.scrollIntoView({behavior: 'smooth'})
+})
+
+clickListSt.addEventListener('click',function(e){
+    e.preventDefault();
+
+    window.scrollTo({left:0, top: positionListSt, behavior: 'smooth'})
+    
+})
+
+// function scrollToElement(idElement){
+//     window.scrollTo({
+//         left: 0,
+//         top: document.getElementById('' + idElement + '').offsetTop,
+//         behavior: 'smooth',
+//     })
+// }
+
+// let navList = document.getElementsByClassName('nav-list');
+// navList[0].addEventListener('click', scrollToElement(this.id));
 
