@@ -91,5 +91,62 @@ button.addEventListener('click', function(){
     isDisplayed = !isDisplayed;
 })
 
+let parentBtn = document.getElementById('parentBtn');
+let childBtn = document.getElementById('childBtn');
+let childA = document.getElementById('childA');
+
+// parentBtn.addEventListener('click',function(e){
+//     console.log('parent');
+// })
+
+// childBtn.addEventListener('click',function(e){
+//     e.stopPropagation(); // test button chồng lên nhau
+//     e.preventDefault();
+//     // const self = e.target;
+//     const self = e.currentTarget;
+//     console.log('child btn');
+//     console.log(self);
+// })
+
+// childA.addEventListener('click',function(e){
+//     e.preventDefault();
+//     console.log('child A');
+// })
+
+// childA.addEventListener('click', function(e){
+//     e.preventDefault(); // làm mất chức năng ban đầu của nó,
+//     // ví dụ như, thẻ <a> thì mất chức năng click vào nhảy trang khác
+//     console.log('child a');
+// })
+
+
+// fixed header 
+let nav = document.getElementById('nav');
+
+// c1
+
+// let sticky = nav.offsetTop;
+// console.log('nav -- offsetTop',sticky)
+
+// window.addEventListener('scroll',function(e){
+//     console.log('pageYoffset', window.pageYOffset)
+//     if (window.pageYOffset > sticky){
+//         nav.classList.add('nav--display')
+//     } else {
+//         nav.classList.remove('nav--display');
+//     }
+// })
+
+let position = 0
+
+window.addEventListener('scroll', function(e){
+    position = window.scrollY;
+    // console.log(position)
+    if (position != 0){
+        nav.classList.add('nav--display');
+    } else {
+        nav.classList.remove('nav--display');
+    }
+})
 
 
