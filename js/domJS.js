@@ -82,6 +82,16 @@ let positionMin = -1;
 
 for (let i = 0; i < students.length; i++) {
     var diemTB = averegeCalc(students[i].math, students[i].English);
+    let classify = '';
+    if (diemTB >= 5 && diemTB < 6.5){
+        classify = 'Trung binh';
+    } else if (diemTB >= 6.5 && diemTB < 8){
+        classify = 'Kha';
+    } else if (diemTB >= 8 && diemTB <= 10){
+        classify = 'Gioi';
+    } else {
+        classify = 'Yeu';
+    }
     myHtml += '<tr class="tr--student">' +
         `<td> ${i + 1} </td>` +
         `<td> ${students[i].name} </td>` +
@@ -89,6 +99,7 @@ for (let i = 0; i < students.length; i++) {
         `<td> ${students[i].math} </td>` +
         `<td> ${students[i].English} </td>` +
         `<td> ${diemTB} </td>` +
+        `<td> ${classify} </td>` +
         '</tr>';
     if (diemTB > max) {
         max = diemTB;
@@ -101,7 +112,7 @@ for (let i = 0; i < students.length; i++) {
     }
 }
 
-let data = document.getElementById('dataCell');
+let dataCell = document.getElementById('dataCell');
 
 let button = document.getElementById('click');
 var isDisplayed = true;
@@ -110,7 +121,7 @@ button.addEventListener('click', function () {
     var display = document.getElementById('dataCell')
     // display.classList.toggle('undisplay');
 
-    data.innerHTML = myHtml;
+    dataCell.innerHTML = myHtml;
 
     if (isDisplayed) {
         button.textContent = 'Hide Data';
@@ -125,7 +136,7 @@ button.addEventListener('click', function () {
     isDisplayed = !isDisplayed;
 })
 */
-data.innerHTML = myHtml;
+dataCell.innerHTML = myHtml;
 
 let trSt = document.getElementsByClassName('tr--student')
 trSt[positionMax].classList.add('tr--student--max')
