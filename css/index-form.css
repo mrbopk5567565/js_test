@@ -1,0 +1,49 @@
+.form-student{
+    margin: 30px auto;
+    background: #ecf0f1;
+    width: 90%;
+    padding: 30px;
+    border-radius:10px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-list{
+    width: 50%;
+}
+
+.form-item{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.form-lable{
+    width: 30%;
+    font-weight: bold;
+}
+
+.form-input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.form-item--checkbox{
+    margin-left: 30%;
+}
+
+.form-lable--checkbox{
+    width: 80%;
+    font-weight: normal;
+}
+
+.form-button{
+    margin-left: 30%;
+}
+
+.table-list{
+    width: 50%;
+}

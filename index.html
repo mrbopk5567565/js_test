@@ -4,6 +4,7 @@
 <head>
     <title>My name is tanj1r0</title>
     <link rel="stylesheet" href="./css/index-css.css">
+    <link rel="stylesheet" href="./css/index-form.css">
 </head>
 
 <body>
@@ -138,6 +139,48 @@
         </div>
         <button id="formButton">Confirm</button>
     </form>
+
+    <div class="form-student">
+        <form class="form-list" action="">
+            <div class="form-item">
+                <label class="form-lable" for="name">Name</label>
+                <input class="form-input" type="text" id="name" name="name">
+            </div>
+            <div class="form-item">
+                <label class="form-lable" for="age">Age</label>
+                <input class="form-input" type="text" id="age" name="age">
+            </div>
+            <div class="form-item">
+                <label class="form-lable" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email">
+            </div>
+            <div class="form-item">
+                <label class="form-lable" for="hobby">Hobbies</label>
+                <input class="form-input" type="text" id="hobby" name="hobby">
+            </div>
+            <div class="form-item form-item--checkbox">
+                <input type="checkbox" name="available" id="available">
+                <label class="form-lable form-lable--checkbox" for="available">Do you want Submit ?</label>
+            </div>
+            <div class="form-item">
+                <button class="form-button">Submit</button>
+            </div>
+        </form>
+
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Hobbies</th>
+                </tr>
+            </thead>
+            <tbody id="dataListInfo">
+
+            </tbody>
+        </table>
+    </div>
 
     <!-- test button chồng lên nhau -->
     <!-- <div id="parentBtn">
