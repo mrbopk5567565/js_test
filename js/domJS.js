@@ -142,6 +142,50 @@ let trSt = document.getElementsByClassName('tr--student')
 trSt[positionMax].classList.add('tr--student--max')
 trSt[positionMin].classList.add('tr--student--min')
 
+// let studentMaxToMin = students;
+let studentMaxToMin = Object.assign([], students);
+
+console.log('new arr',studentMaxToMin)
+
+// studentMaxToMin.sort((a,b) => b.averege - a.averege)
+
+// var flag = studentMaxToMin[0];
+// for (var i = 0; i < studentMaxToMin.length; i++){
+//     var diemTB_i = (studentMaxToMin[i].math + studentMaxToMin[i].English) / 2;
+//     for (var j = i + 1; j < studentMaxToMin.length; j++){
+//         var diemTB_j = (studentMaxToMin[j].math + studentMaxToMin[j].English) / 2;
+//         if (diemTB_i < diemTB_j){
+//             flag = studentMaxToMin[j];
+//             studentMaxToMin[j] = studentMaxToMin[i];
+//             studentMaxToMin[i] = flag;
+//         }
+//     }
+// }
+
+var i = 0;
+for (var j = 0; j < studentMaxToMin.length; j++) {
+    var diemTB_i = (studentMaxToMin[i].math + studentMaxToMin[i].English) / 2;
+    var diemTB_j = (studentMaxToMin[j].math + studentMaxToMin[j].English) / 2;
+
+    if (diemTB_i < diemTB_j) {
+        // flag_tb = diemTB_j;
+        // diemTB_j = diemTB_i;
+        // diemTB_i = flag_tb;
+
+        flag_tb = studentMaxToMin[i];
+        studentMaxToMin[i] = studentMaxToMin[j];
+        studentMaxToMin[j] = flag_tb;
+    }
+    if (j == studentMaxToMin.length - 1) {
+        i++;
+        j = i;
+    }
+}
+
+console.log('new arr max to min',studentMaxToMin)
+
+
+
 
 /*
 let parentBtn = document.getElementById('parentBtn');
@@ -217,9 +261,6 @@ let positionListSt = listSt.offsetTop;
 
 clickAboutUs.addEventListener('click', function (e) {
     e.preventDefault();
-    let bodyScrollTop = document.body.scrollTop;
-
-    console.log(bodyScrollTop)
 
     window.scrollTo({
         left: 0,
