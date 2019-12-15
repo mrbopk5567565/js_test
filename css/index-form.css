@@ -49,8 +49,120 @@
 
 .form-button{
     margin-left: 30%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .table-list{
     width: 50%;
+}
+
+/* section clock */
+.section-clock{
+    margin: 50px auto;
+}
+
+.clock{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+    margin: 30px auto;
+}
+
+.clock--hour{
+    position: absolute;
+    width: 14px;
+    height: 150px;
+    background: #3498db;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clock--hour::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    border-bottom: 10px solid #3498db;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
+
+.clock:hover .clock--hour{
+    /* transform-origin: 0 center;
+    transform: translateY(-50%) rotate(30deg); */
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(30deg);
+}
+
+.clock--min{
+    position: absolute;
+    width: 10px;
+    height: 180px;
+    background: #3498db;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clock--min::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    border-bottom: 10px solid #3498db;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
+
+.clock:hover .clock--min{
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(135deg);
+}
+
+.clock--sec{
+    position: absolute;
+    width: 5px;
+    height: 200px;
+    background: #f1c40f;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.clock--sec::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    border-bottom: 10px solid #f1c40f;
+    border-left: 2.5px solid transparent;
+    border-right: 2.5px solid transparent;
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
+
+.clock:hover .clock--sec{
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(135deg);
+}
+
+.test{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1abc9c;
+    /* border: 1px solid red; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.clock--test{
+    text-align: center;
 }
