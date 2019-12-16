@@ -259,9 +259,10 @@ let listSt = document.getElementById('listSt');
 let positionAboutUs = aboutUs.offsetTop;
 let positionListSt = listSt.offsetTop;
 
+console.log(positionListSt)
+
 clickAboutUs.addEventListener('click', function (e) {
     e.preventDefault();
-
     window.scrollTo({
         left: 0,
         top: positionAboutUs,
@@ -272,14 +273,31 @@ clickAboutUs.addEventListener('click', function (e) {
 
 clickListSt.addEventListener('click', function (e) {
     e.preventDefault();
-
+    
     window.scrollTo({
         left: 0,
-        top: positionListSt,
+        top: positionListSt - 200,
         behavior: 'smooth'
     })
 
 })
+
+
+
+function scrollToElement(id, event){
+    event.preventDefault();
+    let a = document.querySelector('#' + id + '').getAttribute("href");
+    console.log('a',a)
+    let b = document.querySelector('' + a + '')
+    console.log('b',b)
+    let c = b.offsetTop;
+    console.log('c',c)
+    window.scrollTo({
+        left: 0,
+        top: c,
+        behavior: 'smooth'
+    })
+}
 
 // function scrollToElement(idElement){
 //     window.scrollTo({

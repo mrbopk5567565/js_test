@@ -22,7 +22,7 @@ const dataListInfo = document.querySelector('#dataListInfo')
 
 let value = formInput[0].value
 let tableHtml = '';
-console.log(dataListInfo)
+// console.log(dataListInfo)
 
 formButton.addEventListener('click', function (e) {
     e.preventDefault();

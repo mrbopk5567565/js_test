@@ -151,6 +151,13 @@
     transform: translateX(-50%) rotate(135deg);
 }
 
+/* .clock--number--one{
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(30deg);
+} */
+
 .test{
     position: absolute;
     width: 30px;

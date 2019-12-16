@@ -17,7 +17,10 @@
                 <a id="nav-listst" class="nav-link" href="#listSt">Student List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
+                <a id="nav-form" class="nav-link" href="#form" onclick="scrollToElement(id, event)">Form</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-clock" class="nav-link" href="#clock" onclick="scrollToElement(id, event)">Clock</a>
             </li>
         </ul>
     </nav>
@@ -140,7 +143,7 @@
         <button id="formButton">Confirm</button>
     </form> -->
 
-    <div class="form-student">
+    <div id="form" class="form-student">
         <form class="form-list" action="">
             <div class="form-item">
                 <label class="form-lable" for="name">Name</label>
@@ -187,11 +190,12 @@
         </table>
     </div>
 
-    <div class="section-clock">
+    <div id="clock" class="section-clock">
         <div class="clock">
             <div class="clock--hour"></div>
             <div class="clock--min"></div>
             <div class="clock--sec"></div>
+            <!-- <div class="clock--number--one">1</div> -->
             <div class="test"></div>
         </div>
         <p class="clock--test" id="timeCurrent">Hello</p>
@@ -204,9 +208,9 @@
     </div> -->
 
     <script src="./js/domJS.js"></script>
-    <script src="./js/date.js"></script>
+    <!-- <script src="./js/date.js"></script>
     <script src="./js/form.js"></script>
-    <script src="./js/clock.js"></script>
+    <script src="./js/clock.js"></script> -->
 </body>
 
 </html>
